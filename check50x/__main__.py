@@ -26,7 +26,7 @@ from . import internal, __version__, simple, api
 from .api import Failure
 from .runner import CheckRunner, CheckResult
 
-lib50.api.LOCAL_PATH = "~/.local/share/check50"
+lib50.api.LOCAL_PATH = "~/.local/share/check50x"
 
 
 class Error(Exception):
@@ -185,7 +185,7 @@ class LogoutAction(argparse.Action):
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="check50")
+    parser = argparse.ArgumentParser(prog="check50x")
 
     parser.add_argument("slug", help=_("prescribed identifier of work to check"))
     parser.add_argument("-d", "--dev",
@@ -243,7 +243,7 @@ def main():
                 raise Error(_("{} is not a directory").format(internal.check_dir))
         else:
             # Otherwise have lib50 create a local copy of slug
-            internal.check_dir = lib50.local(args.slug, "check50", offline=args.offline)
+            internal.check_dir = lib50.local(args.slug, "check50x", offline=args.offline)
 
         config = internal.load_config(internal.check_dir)
         install_translations(config["translations"])
@@ -270,7 +270,7 @@ def main():
     else:
         # TODO: Remove this before we ship
         raise NotImplementedError("cannot run check50 remotely, until version 3.0.0 is shipped ")
-        username, commit_hash = lib50.push("check50", args.slug)
+        username, commit_hash = lib50.push("check50x", args.slug)
         results = await_results(f"https://cs50.me/check50/status/{username}/{commit_hash}")
 
     if args.output == "json":

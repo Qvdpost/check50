@@ -12,13 +12,13 @@ setup(
     description="This is check50, with which you can check solutions to problems for CS50.",
     license="GPLv3",
     message_extractors = {
-        'check50': [('**.py', 'python', None),],
+        'check50x': [('**.py', 'python', None),],
     },
     install_requires=["attrs>=18", "bs4", "pexpect", "lib50>=1.0.1", "pyyaml", "requests", "termcolor"],
     extras_require = {
         "develop": ["sphinx", "sphinx_rtd_theme"]
     },
-    keywords=["check", "check50"],
+    keywords=["check", "check50x"],
     name="check50x",
     packages=["check50x"],
     python_requires=">= 3.6",
