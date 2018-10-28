@@ -20,10 +20,10 @@ setup(
     },
     keywords=["check", "check50"],
     name="check50x",
-    packages=["check50"],
+    packages=["check50x"],
     python_requires=">= 3.6",
     entry_points={
-        "console_scripts": ["check50=check50x.__main__:main"]
+        "console_scripts": ["check50x=check50x.__main__:main"]
     },
     url="https://github.com/cs50/check50",
     version="3.0.0",
